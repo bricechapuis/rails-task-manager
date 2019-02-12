@@ -1,0 +1,19 @@
+<div class="container">
+  <h2><%=@task.title%></h2>
+  <p>Details: <%= @task.details %></p>
+  <p>
+    <% if @task.completed %>
+      <%= 'tatus: Completed' %>
+    <% else %>
+      <%= 'Status: Not completed' %>
+    <% end %>
+  </p>
+
+
+  <button class='btn btn-success'><%= link_to "Edit", edit_path %></button>
+  <button class='btn btn-danger'><%= link_to "Delete", task_path(@task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %></button>
+  <br>
+  <%= link_to 'Back to index', '/tasks' %>
+</div>

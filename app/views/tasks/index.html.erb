@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class='container'>
+    <h1>List of Tasks</h1>
+
+    <ul>
+      <% @tasks.each do |task| %>
+        <% if task.completed %>
+          <li><p>[X] <%= link_to task.title, task_path(task) %></p></li>
+        <% else %>
+          <li><p>[ ] <%= link_to task.title, task_path(task) %></p></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <button class='btn btn-primary'><%= link_to 'Create a task', '/tasks/new' %></button>
+  </div>
+</div>
